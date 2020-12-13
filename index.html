@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>test</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="text-light" style="font-family: Oswald, sans-serif;background: #ffff;">
+    <div class="container bg-dark">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Tu Valide ?</h1>
+            </div>
+        </div>
+    
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-left">UE701&nbsp;Mathématiques&nbsp;et&nbsp;Données <br></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Modélisation&nbsp;stochastique<br><input type="text" id="stocha"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sécurité&nbsp;et&nbsp;cryptographie<br><input type="text" id="crypto"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Probabilités&nbsp;Statistiques:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<input type="text" id="proba"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-left">UE702&nbsp;Informatique&nbsp;et&nbsp;Conception&nbsp;II<br></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Modélisation&nbsp;dynamique<br><input type="text" id="dyna"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>réseaux et systèmes repartis:&nbsp; &nbsp;<input type="text" id="reseaux"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>flux de données et accès concurents:<input type="text" id="flux"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-left">UE703&nbsp;Visualisation&nbsp;et&nbsp;Gouvernance<br></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Analyse&nbsp;et&nbsp;visualisation&nbsp;de&nbsp;données<br><input type="text" id="viz"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Développement&nbsp;Full&nbsp;Stack<br><input type="text" id="full"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Economie et gouvernance de la donnée<input type="text" id="eco"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-left">UE704&nbsp;SHES&nbsp;et&nbsp;Langues&nbsp;3<br></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>management&nbsp;de&nbsp;l'innovation<br><input type="text" id="mana"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>ressource et dynamique professionnelle<input type="text" id="ressource"></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Langue vivante :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<input type="text" id="lang"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Résultats</h1>
+                    <button type="button" class="btn btn-light" id="soum"onclick="">Soumettre</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h5>Moyenne UE1</h5>
+                    <div id="moy1"> </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Moyenne UE2</h5>
+                    <div id="moy2"> </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Moyenne UE3</h5>
+                    <div id="moy3"> </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h5>Moyenne UE4</h5>
+                    <div id="moy4"> </div>
+
+                </div>
+                <div class="col-md-2">
+                    <h5>Moyenne Totale</h5>
+                    <div id="tot"> </div>
+
+                </div>
+            </div>
+            <div class="row"></div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    // Get value on button click and show alert
+    $("#soum").click(function(){
+        pds1=2.5
+        var crypto = Number($("#crypto").val());
+        var stocha = Number($("#stocha").val());
+        var proba = Number($("#proba").val());
+        moyenne1 = (crypto + stocha + proba)/3
+        document.getElementById("moy1").innerHTML = "<h6>"+moyenne1.toFixed(2).toString() + "/20</h6> "
+
+        pds2=2.5
+        var dyna = Number($("#dyna").val());
+        var reseaux = Number($("#reseaux").val());
+        var flux = Number($("#flux").val());
+        moyenne2 = (dyna + reseaux + flux)/3
+        document.getElementById("moy2").innerHTML = "<h6>"+moyenne2.toFixed(2).toString() + "/20</h6> "
+
+        pds3=3
+        var viz = Number($("#viz").val());
+        var full = Number($("#full").val());
+        var eco = Number($("#eco").val());
+        moyenne3 = (viz + full + eco)/3
+        document.getElementById("moy3").innerHTML = "<h6>"+moyenne3.toFixed(2).toString() + "/20</h6> "
+
+        pds41=1.5
+        var mana = Number($("#mana").val());
+        var ressource = Number($("#ressource").val());
+        var lang = Number($("#lang").val());
+        moyenne4 = (mana*pds41 + ressource*pds41 + lang*3)/6
+        document.getElementById("moy4").innerHTML = "<h6>"+moyenne4.toFixed(2).toString() + "/20</h6> "
+
+        tot = (7.5*moyenne1 + 7.5*moyenne2 + 9*moyenne3 + 6*moyenne4)/30
+        document.getElementById("tot").innerHTML = "<h6>"+tot.toFixed(2).toString() + "/20</h6> "
+
+
+
+
+
+
+
+    });
+
+});
+</script>
